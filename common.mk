@@ -1,6 +1,10 @@
 #Common headers
 display_top := $(call my-dir)
 
+ifeq ($(TARGET_USES_COLOR_METADATA), true)
+common_flags := -DUSE_COLOR_METADATA
+endif
+
 use_hwc2 := false
 ifeq ($(TARGET_USES_HWC2), true)
     use_hwc2 := true
